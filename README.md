@@ -14,7 +14,7 @@ Project aims to create a Recipe App.
 ```
 Recipe App (folder)
 |
-|----readme.md         #
+|----readme.md       
 SOLUTION
 ├── public
 │     └── index.html
