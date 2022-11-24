@@ -19,6 +19,7 @@ export const Brand = styled(Link)`
 `;
 
 export const Menu = styled(Flex)`
+font-size: 1.3rem;
   @media (max-width: ${({ theme }) => theme.screens.lg}) {
     flex-direction: column;
     width: 100%;    
