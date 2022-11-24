@@ -1,11 +1,13 @@
+import { ThemeProvider } from "styled-components";
 import "./App.css";
+import theme from "./components/GlobalStyles/theme";
 import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <AppRouter />
-    </div>
+    </ThemeProvider>
   );
 }
 
