@@ -1,8 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Brand, Nav } from "./Navbar.style";
+import React, { useState } from "react";
+import { Brand, Nav, Menu, MenuLink, Hamburger } from "./Navbar.style";
+import {GiHamburgerMenu} from "react-icons/gi";
+
 
 const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <Nav justify='space-between' wrap='wrap'>
       <Brand to='/'>
@@ -10,12 +14,16 @@ const Navbar = () => {
         <span>Recipes</span>
       </Brand>
 
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/logout">Logout</Link>
-      </div>
+      <Hamburger onClick={() => setOpen(!open)}>
+        <GiHamburgerMenu />
+      </Hamburger>
+
+      <Menu open={open} onClick={() => setOpen(!open)}>
+        <MenuLink to="/">Home</MenuLink>
+        <MenuLink to="/about">About</MenuLink>
+        <MenuLink to="/register">Register</MenuLink>
+        <MenuLink to="/logout">Logout</MenuLink>
+      </Menu>
     </Nav>
   );
 };
